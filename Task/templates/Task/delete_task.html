@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Task</title>
+</head>
+<body>
+    <!-- Confirmation message for task deletion -->
+    <p>Are you sure to delete <b>{{ item.title }}</b></p>
+
+    <!-- Form for task deletion -->
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <!-- Cancel button that redirects to the index page -->
+        <a href="{% url 'index' %}"><button class="btn btn-sm btn-info">Cancel</button></a>
+
+        <!-- Delete button to submit the deletion request -->
+        <a href="{% url 'delete_task' pk=item.id %}"><button class="btn btn-sm btn-danger">Delete</button></a>
+    </form>
+</body>
+</html>

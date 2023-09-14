@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Task</title>
+</head>
+<body>
+    <h3>Update Task</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        <!-- Input field for updating the task title -->
+        <label for="title">Task Title:</label>
+        <input type="text" id="title" name="title" placeholder="Enter updated task title" value="{{ task.title }}">
+
+        <!-- Submit button for updating the task -->
+        <button type="submit">Update Task</button>
+    </form>
+</body>
+</html>
